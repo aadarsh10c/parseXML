@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<CDR xmlns:debug="http://
+www.hp.com/ocmp/2004/03/cdr-debug"
+  xmlns:log="http://www.hp.com/
+ocmp/2004/03/cdr-log" contextversion=""
+  host="ga1-tas-0.ga1-tas.hpetas-lab-bel01-csde-ns01.svc.cluster.local"
+  level="2" scifservicename="ScifSipService" seeinstanceid="1"
+  sessionid="scifsession_SIP_SERVICE_examplehost_1_examplehost_1_1_1"
+  starttime="2023-08-08 12:51:47.665" stoptime="2023-08-08 12:51:56.291"
+  version="1.0">
+  <call call-id="SIP#1" duration="8624" mediaType="UNKNOWN" msec="1"
+    networkCallType="ORIGINATING" technology="sip">
+    <appLogInviteRcvd msec="72">
+      <call_id>FA163E996A00-3fe8-90a05700-158e239-62cce4e1-b6099</call_id>
+      <calling_party_uri>P-Asserted-Identity:
+        sip:+16025798939@msg.pc.t-mobile.com;user=phone;verstat=TN-Validation-Passed</calling_party_uri>
+      <called_party_uri>INVITE sip:+523143311300@msg.pc.t-mobile.com;user=phone SIP/2.0</called_party_uri>
+      <termination_type>ILD</termination_type>
+      <cli_enabled>Y</cli_enabled>
+      <source_ip_addr>192.168.10.10</source_ip_addr>
+    </appLogInviteRcvd>
+    <appLogRoute msec="73">
+      <dial_code>268</dial_code>
+    </appLogRoute>
+    <appLogInviteFwd msec="74">
+      <contract>BTS_1</contract>
+      <fqdn>sbc33.t-mobile.com</fqdn>
+      <tier>Tier1</tier>
+      <term_ip_addr>10.164.147.15</term_ip_addr>
+      <rank>1</rank>
+    </appLogInviteFwd>
+    <appLogSipResp msec="80">
+      <resp_code>400</resp_code>
+      <reason_header>TIMEOUT</reason_header>
+    </appLogSipResp>
+    <appLogInviteFwd msec="74">
+      <contract>BTS_2</contract>
+      <fqdn>sbc33.t-mobile.com</fqdn>
+      <term_ip_addr>20.164.147.28</term_ip_addr>
+      <rank>1</rank>
+    </appLogInviteFwd>
+    <appLogSipResp msec="90">
+      <resp_code>180</resp_code>
+    </appLogSipResp>
+    <appLogSipResp msec="95">
+      <resp_code>200</resp_code>
+    </appLogSipResp>
+  </call>
+</CDR>
