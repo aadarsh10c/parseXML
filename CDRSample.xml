@@ -2,7 +2,7 @@
 <CDR xmlns:debug="http://
 www.hp.com/ocmp/2004/03/cdr-debug"
   xmlns:log="http://www.hp.com/
-ocmp/2004/03/cdr-log" contextversion=""
+ocmp/2004/03/cdr-log" contextversion="test"
   host="ga1-tas-0.ga1-tas.hpetas-lab-bel01-csde-ns01.svc.cluster.local"
   level="2" scifservicename="ScifSipService" seeinstanceid="1"
   sessionid="scifsession_SIP_SERVICE_examplehost_1_examplehost_1_1_1"

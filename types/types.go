@@ -9,19 +9,19 @@ type Person struct {
 }
 
 type CDR struct {
-	XMLName         xml.Name `xml:"CDR"`
-	DebugNamespace  string   `xml:"xmlns:debug,attr"`
-	LogNamespace    string   `xml:"xmlns:log,attr"`
-	ContextVersion  string   `xml:"contextversion,attr"`
-	Host            string   `xml:"host,attr"`
-	Level           string   `xml:"level,attr"`
-	ScifServiceName string   `xml:"scifservicename,attr"`
-	SeeInstanceID   string   `xml:"seeinstanceid,attr"`
-	SessionID       string   `xml:"sessionid,attr"`
-	StartTime       string   `xml:"starttime,attr"`
-	StopTime        string   `xml:"stoptime,attr"`
-	Version         string   `xml:"version,attr"`
-	Call            Call     `xml:"call"`
+	XMLName xml.Name `xml:"CDR"`
+	// DebugNamespace  string   `xml:"xmlns:debug,attr"`
+	// LogNamespace    string   `xml:"xmlns:log,attr"`
+	ContextVersion  string `xml:"contextversion,attr"`
+	Host            string `xml:"host,attr"`
+	Level           string `xml:"level,attr"`
+	ScifServiceName string `xml:"scifservicename,attr"`
+	SeeInstanceID   string `xml:"seeinstanceid,attr"`
+	SessionID       string `xml:"sessionid,attr"`
+	StartTime       string `xml:"starttime,attr"`
+	StopTime        string `xml:"stoptime,attr"`
+	Version         string `xml:"version,attr"`
+	Call            Call   `xml:"call"`
 }
 
 type Call struct {

@@ -1,16 +1,37 @@
 package parser
 
 import (
+	"bytes"
+	"encoding/xml"
 	"fmt"
 	"log"
 	"os"
+
+	"golang.org/x/net/html/charset"
 )
 
-func ParseCdr(fileName string) {
+func ParseXMLtoStruct(fileName string, p interface{}) {
 	//Read the file
-	data, err := os.ReadFile("CDRSample.xml")
+	file, err := os.ReadFile(fileName)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("error while opening file: ", err)
 	}
-	fmt.Printf("CDR %v", string(data))
+
+	//converted to reader
+	fileReader := bytes.NewReader(file)
+
+	//used the reader and convert it into a decoder
+	decoder := xml.NewDecoder(fileReader)
+
+	//set the charsetReader to NewReader label function,
+	//converts the content to utf-8 encoded
+	decoder.CharsetReader = charset.NewReaderLabel
+
+	//Parse the CDR xml into the struct
+	err = decoder.Decode(p)
+	if err != nil {
+		log.Fatalf("Error while parsing: %v ", err)
+	}
+	fmt.Printf("Decoded %v", p)
+
 }
