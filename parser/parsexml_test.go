@@ -73,6 +73,17 @@ func TestParseXML(t *testing.T) {
 			t.Errorf("Got %v, wanted %v", got, want)
 		}
 	})
+	t.Run("Parse appLogSipResp resp_code ", func(t *testing.T) {
+		want := []int{400, 180, 200}
+		appLogLen := len(p.Call.AppLogSipResp)
+		got := make([]int, appLogLen)
+		for i := 0; i < appLogLen; i++ {
+			got[i] = p.Call.AppLogSipResp[i].RespCode
+		}
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("Got %v, wanted %v", got, want)
+		}
+	})
 
 }
 
