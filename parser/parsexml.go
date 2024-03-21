@@ -5,8 +5,10 @@ import (
 	"encoding/xml"
 	"fmt"
 	"log"
+	"net/url"
 	"os"
 
+	"github.com/aadarsh10c/go-playground/parseXML/types"
 	"golang.org/x/net/html/charset"
 )
 
@@ -34,4 +36,23 @@ func ParseXMLtoStruct(fileName string, p interface{}) {
 	}
 	fmt.Printf("Decoded %v", p)
 
+}
+
+
+func ParseXMLtoStruct2( xmlEncodedData string , p *types.CDR){
+
+	// URL-decode the data
+	decodedData, err := url.QueryUnescape(xmlEncodedData)
+	if err != nil {
+		fmt.Printf("Error decoding URL: %v\n", err)
+		return
+	}
+	fmt.Println("Decoded data: ",decodedData)
+	err = xml.Unmarshal([]byte(decodedData), p)
+	if err != nil {
+		fmt.Printf("Error unmarshaling XML: %v\n", err)
+		return
+	}
+
+	fmt.Printf("Parsed XML: %+v\n", (*p))
 }
